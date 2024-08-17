@@ -1,0 +1,717 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #474747;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  transition: 0.3s;
+  color: rgb(0, 0, 0);
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+
+#cadForm{
+  background-color:#A5D6A7;
+  width: 700px;
+  height: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px;
+}
+
+#logoImg {
+  width: 160px;
+  height: 80px;
+  margin-right: -20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(63, 243, 87, 0.662745098);
+  height: 8vh;
+  box-shadow: 1px 1px 10px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  z-index: 2;
+  
+}
+
+.nav-list li {
+  letter-spacing: 2px;
+  margin-left: 32px;
+  margin-top: 1rem;
+  
+}
+
+.nav-list > li > a {
+  color: #474747;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background-color: white;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-list {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 40vw;
+    height: 92vh;
+    background-color: #C8E6C9;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  .nav-list.active {
+    transform: translateX(0);
+  }
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+
+
+#loginForm {
+  width: 80%; /* Largura ajustada */
+  max-width: 700px; /* Largura máxima */
+  margin: 200px auto; /* Centralizado vertical e horizontalmente */
+  background-color: #A5D6A7;
+  padding: 40px; /* Reduzido para não ocupar muito espaço */
+  border-radius: 30px;
+  box-shadow: 1px 1px 20px;
+  text-align: center; /* Centralizar o texto */
+}
+
+.btn.btn-primary {
+  width: 100%; /* Largura total */
+  margin-top: 20px; /* Espaçamento superior ajustado */
+  background-color: #ffffff;
+  color: black;
+  border-style: none;
+}
+
+.btn.btn-primary:hover {
+  opacity: 0.7;
+}
+
+#inputEmail3,
+#inputPassword3 {
+  width: 100%; /* Largura total */
+  box-sizing: border-box; /* Inclui padding e borda na largura total */
+  margin-bottom: 20px; /* Espaçamento inferior ajustado */
+}
+
+@media (max-width: 768px) {
+  /* Estilos adicionais para telas menores */
+  #loginForm {
+    padding: 20px; /* Reduz o padding para telas menores */
+  }
+  .btn.btn-primary {
+    margin-top: 15px; /* Espaçamento superior ajustado */
+  }
+}
+#loginForm > div:nth-child(1) > label,
+#loginForm > div:nth-child(2) > label,
+#loginForm > div:nth-child(3) > div > div > label {
+  color: rgb(0, 0, 0);
+}
+
+#loginForm > div:nth-child(3) > div > div > label {
+  margin-left: -60%;
+}
+
+h1 {
+  font-size: 5vw; /* Tamanho da fonte responsivo */
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-bottom: 3vw; /* Espaçamento inferior responsivo */
+  color: rgb(0, 0, 0);
+}
+
+div#listAll {
+  background-color: #A5D6A7;
+  margin-top: 2vw; /* Espaçamento superior responsivo */
+  width: 100%; /* Largura ajustada */
+  max-width: 1300px; /* Largura máxima */
+  padding: 5vw; /* Padding responsivo */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2vw; /* Bordas arredondadas responsivas */
+  text-align: center;
+  box-shadow: 0.5vw 0.5vw 2vw rgba(0, 0, 0, 0.3); /* Sombra responsiva */
+}
+
+#inputTask {
+  margin-left: 3vw; /* Margem esquerda responsiva */
+  margin-top: 3vw; /* Margem superior responsiva */
+  border-style: none;
+  border-radius: 2vw; /* Bordas arredondadas responsivas */
+  width: 50%; /* Largura ajustada */
+  max-width: 1000px; /* Largura máxima */
+  height: 3vw; /* Altura responsiva */
+  font-size: 1vw; /* Tamanho da fonte responsivo */
+  padding: 2vw; /* Padding responsivo */
+  outline-style: none;
+  box-shadow: 0.5vw 0.5vw 2vw rgba(0, 0, 0, 0.3); /* Sombra responsiva */
+}
+
+#addTaskButton {
+  border: none;
+  border-radius: 50%;
+  background-color: #82C685;
+  width: 5vw; /* Largura responsiva */
+  height: 5vw; /* Altura responsiva */
+}
+
+#detailsButton {
+  border-style: none;
+  height: 50%;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+span {
+  font-size: 2vw; /* Tamanho da fonte responsivo */
+}
+
+li#taskAdd {
+  display: flex;
+  justify-content: space-between;
+  width: 90%; /* Largura ajustada */
+  max-width: 800px; /* Largura máxima */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3vw; /* Margem superior responsiva */
+  background-color: #eeffff;
+  padding: 2vw; /* Padding responsivo */
+  align-items: center;
+  border-radius: 5vw; /* Bordas arredondadas responsivas */
+  box-shadow: 0.5vw 0.5vw 2vw rgba(0, 0, 0, 0.3); /* Sombra responsiva */
+}
+
+input#inputDate {
+  border-radius: 2vw; /* Bordas arredondadas responsivas */
+  border-style: none;
+  height: 4vw; /* Altura responsiva */
+  font-size: 1vw; /* Tamanho da fonte responsivo */
+  padding: 2vw; /* Padding responsivo */
+  box-shadow: 0.5vw 0.5vw 2vw rgba(0, 0, 0, 0.3); /* Sombra responsiva */
+}
+
+#taskContainer {
+  max-height: 50vw; /* Limite de altura responsivo */
+  overflow-y: auto; /* Adicionar scroll vertical quando necessário */
+}
+
+#taskModal {
+  margin-top: 30vh;
+}
+
+#taskModal > .modal-content {
+  width: 50%;
+}
+
+#taskModal > .modal-content > button {
+  width: 30%;
+  height: 40px;
+  align-self: center;
+  border-style: none;
+  background-color: rgba(63, 243, 87, 0.662745098);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+@media (max-width: 1070px) {
+  input#inputDate {
+    font-size: 2vh;
+  }
+  #inputTask {
+    font-size: 2vh;
+  }
+}
+#imgAdd {
+  width: 100px;
+}
+
+#cadFom > form {
+  margin-inline: 5%; /* Margem responsiva */
+}
+
+#cadFom {
+  display: flex;
+  flex-direction: column; /* Altera a direção do flex para coluna */
+  padding: 5vw; /* Aumenta o padding para telas menores */
+  width: 90%; /* Largura ajustada */
+  max-width: 900px; /* Largura máxima */
+  height: auto; /* Altura ajustada */
+  align-items: center;
+  justify-content: center;
+  margin: 3vw auto 0 auto; /* Margens responsivas */
+  background-color: rgba(63, 243, 87, 0.662745098);
+  border-radius: 3vw; /* Bordas arredondadas responsivas */
+  box-shadow: 0.5vw 0.5vw 2vw rgba(0, 0, 0, 0.3);
+}
+
+#myForm {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+#cadFom > form > div:nth-child(4) > div,
+#cadFom > form > div:nth-child(5) > button {
+  margin: 2vw auto; /* Centraliza horizontalmente e adiciona espaço entre os itens */
+}
+
+.col-md-4 {
+  width: 300%;
+}
+
+#termosDeUsoButton {
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  background-color: transparent; /* Remova a cor de fundo */
+}
+
+/* Regras de mídia para tornar o formulário mais responsivo em telas menores */
+@media (max-width: 768px) {
+  #cadFom {
+    padding: 10vw; /* Aumenta o padding para telas menores */
+  }
+  #cadFom > form > div:nth-child(4) > div,
+  #cadFom > form > div:nth-child(5) > button {
+    margin: 5vw auto; /* Ajusta a margem para telas menores */
+  }
+  #validationServer03,
+  #validationServer01,
+  #validationServerUsername,
+  #validationServerPassword {
+    width: 100%; /* Largura total */
+  }
+}
+#validationServerUsername {
+  z-index: 1;
+}
+
+#modal {
+  display: none; /* Inicialmente oculto */
+  position: fixed; /* Posicionamento fixo em relação à janela de visualização */
+  top: auto; /* Alinha o topo do modal com o topo da janela de visualização */
+  left: 0; /* Alinha a esquerda do modal com a esquerda da janela de visualização */
+  width: 100%; /* Largura total */
+  height: 100%; /* Altura total */
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  z-index: 999; /* Garante que o modal esteja acima de outros elementos */
+  display: flex; /* Usa flexbox para centralizar o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.modal-content {
+  margin: auto;
+  background-color: #fefefe; /* Cor de fundo do modal */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  max-width: 80%; /* Largura máxima do conteúdo do modal */
+  overflow-y: auto; /* Adiciona scroll vertical se o conteúdo for muito longo */
+}
+
+.close {
+  color: #aaa; /* Cor do botão de fechar */
+  float: right; /* Alinha à direita */
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black; /* Cor do botão de fechar ao passar o mouse */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modal {
+  display: none;
+}
+
+#myForm > div:nth-child(4) {
+  height: 120px;
+}
+
+#cadFom > form > div:nth-child(4) > div, #cadFom > form > div:nth-child(5) > button {
+  margin: 0.5vw auto;
+}
+
+body {
+  background-color: #C8E6C9 ;
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */
+
+
+footer{
+  width: 100%;
+}
+
+.footer{
+  text-decoration: none;
+}
+
+#footer_content{
+  background-color:  rgba(63, 243, 87, 0.662745098);
+  text-align: left;
+  padding: 3rem 3.5rem;
+}
+
+#footer_contracts h1{
+  margin-bottom: 0.75rem;
+}
+
+#footer_social_media{
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+
+}
+
+#footer_social_media .footer-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: #f5f5f5;
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+
+#footer_social_media .footer-link:hover{
+  opacity: 0.8;
+}
+
+#footer_social_media .footer-link i {
+  font-size: 1.25rem;
+}
+
+#instagram{
+  background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#facebook{
+  background-color: #4267b3;
+}
+
+#whatsapp{
+  background-color: #25d366;
+}
+
+#footer_copyrigth{
+  display: flex;
+  justify-content: center;
+  font-size: 0.9rem;
+  padding: 1.5rem;
+  font-weight: 100;
+}
+
+
+/* ---- RESET/BASIC STYLING ---- */
+/* Este bloco define estilos básicos de reset e estilos gerais para todos os elementos na página */
+
+/* Define o preenchimento e a margem de todos os elementos como zero, e define o modelo de caixa como border-box para garantir que o preenchimento e a borda não alterem as dimensões do elemento */
+/* Para navegadores baseados em WebKit, como Chrome e Safari, esconde a barra de rolagem */
+
+/* ---- FORM ---- */
+/* Estilos para o formulário de adição de tarefas */
+
+/* Estilos para o formulário */
+#todo-form {
+  padding: 2rem; /* Adiciona preenchimento interno de 2rem (32px) ao formulário */
+  display: flex; /* Usa o modelo de layout flexível */
+  flex-wrap: wrap; /* Permite que os itens dentro do formulário quebrem para a próxima linha se necessário */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+}
+
+/* Estilos para o campo de entrada */
+#todo-form input {
+  flex: 1; /* Faz com que o campo de entrada ocupe o máximo de espaço disponível */
+  padding: 1rem; /* Adiciona preenchimento interno de 1rem (16px) ao campo de entrada */
+  margin-right: 1rem; /* Define uma margem direita de 1rem (16px) para separar o campo de entrada do botão */
+  border-radius: 0.5rem; /* Adiciona uma borda arredondada de 0.5rem (8px) ao campo de entrada */
+  border: none; /* Remove a borda do campo de entrada */
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25); /* Adiciona uma sombra sutil ao campo de entrada */
+  background: white; /* Define o fundo do campo de entrada como branco */
+  font-size: 1rem; /* Define o tamanho da fonte como 1rem (16px) */
+  font-family: Arial, Helvetica, sans-serif; /* Define a fonte do campo de entrada */
+  outline: none; /* Remove o contorno ao focar no campo de entrada */
+}
+
+/* Estilos para o botão */
+#todo-form button {
+  padding: 1rem 2rem; /* Adiciona preenchimento interno de 1rem (16px) vertical e 2rem (32px) horizontal ao botão */
+  border-radius: 0.5rem; /* Adiciona uma borda arredondada de 0.5rem (8px) ao botão */
+  border: none; /* Remove a borda do botão */
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25); /* Adiciona uma sombra sutil ao botão */
+  background: #87dfc2; /* Define o fundo do botão como uma cor verde claro */
+  color: black; /* Define a cor do texto como preto */
+  font-weight: bold; /* Define a espessura da fonte como negrito */
+  font-size: 1rem; /* Define o tamanho da fonte como 1rem (16px) */
+  font-family: Arial, Helvetica, sans-serif; /* Define a fonte do botão */
+  cursor: pointer; /* Altera o cursor para o formato de mão ao passar o mouse sobre o botão */
+}
+
+/* ---- BOARD ---- */
+/* Estilos para o quadro do Kanban */
+
+/* Estilos para o quadro */
+.board {
+  width: 100%; /* Define a largura do quadro como 100% da largura do contêiner pai */
+  min-height: 100vh; /* Define a altura mínima do quadro como 100% da altura da janela de visualização */
+  padding: 2rem; /* Adiciona preenchimento interno de 2rem (32px) ao quadro */
+  display: flex; /* Usa o modelo de layout flexível */
+  flex-direction: column; /* Alinha os itens verticalmente em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Estilos para as colunas do Kanban */
+.lanes {
+  display: flex; /* Usa o modelo de layout flexível */
+  justify-content: space-around; /* Distribui uniformemente os itens horizontalmente */
+  gap: 2rem; /* Define um espaçamento de 2rem (32px) entre as colunas */
+  flex-wrap: wrap; /* Permite que as colunas quebrem para a próxima linha se necessário */
+}
+
+/* Estilos para o título das colunas do Kanban */
+.heading {
+  font-size: 1.5rem; /* Define o tamanho da fonte como 1.5rem (24px) */
+  font-weight: bold; /* Define a espessura da fonte como negrito */
+  margin-bottom: 0.5rem; /* Adiciona uma margem inferior de 0.5rem (8px) */
+  text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+/* Estilos para as colunas do Kanban */
+.swim-lane {
+  display: flex; /* Usa o modelo de layout flexível */
+  flex-direction: column; /* Alinha os itens verticalmente em coluna */
+  gap: 1rem; /* Define um espaçamento de 1rem (16px) entre os itens */
+  background: #87dfc2; /* Define o fundo das colunas como uma cor verde claro */
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25); /* Adiciona uma sombra sutil às colunas */
+  padding: 1rem; /* Adiciona preenchimento interno de 1rem (16px) às colunas */
+  border-radius: 0.5rem; /* Adiciona uma borda arredondada de 0.5rem (8px) às colunas */
+  min-width: 225px; /* Define a largura mínima das colunas como 225px */
+}
+
+/* Estilos para as tarefas do Kanban */
+.task {
+  background: white; /* Define o fundo das tarefas como branco */
+  color: black; /* Define a cor do texto como preto */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); /* Adiciona uma sombra sutil às tarefas */
+  padding: 1rem; /* Adiciona preenchimento interno de 1rem (16px) às tarefas */
+  border-radius: 0.5rem; /* Adiciona uma borda arredondada de 0.5rem (8px) às tarefas */
+  font-size: 1rem; /* Define o tamanho da fonte como 1rem (16px) */
+  font-family: Arial, Helvetica, sans-serif; /* Define a fonte das tarefas */
+  cursor: move; /* Altera o cursor para o formato de mover ao passar o mouse sobre as tarefas */
+}
+
+/* Estilos para quando uma tarefa está sendo arrastada */
+.is-dragging {
+  transform: scale(1.05); /* Aumenta ligeiramente o tamanho da tarefa */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25); /* Adiciona uma sombra mais pronunciada à tarefa */
+  background: rgb(50, 50, 50); /* Define o fundo da tarefa como uma cor cinza mais escura */
+  color: white; /* Define a cor do texto como branco */
+}
+
+#listTask span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-left: 10px;
+  background-color: #f9f9f9;
+
+}
+
+.task{
+  list-style: none; background-color: white; 
+  border-radius: 20px; 
+  margin-top: 20px;
+}
+/* ---- RESET/BASIC STYLING ---- */
+/* Este bloco define estilos básicos de reset e estilos gerais para todos os elementos na página */
+
+/* Define o preenchimento e a margem de todos os elementos como zero, e define o modelo de caixa como border-box para garantir que o preenchimento e a borda não alterem as dimensões do elemento */
+
+/* Para navegadores baseados em WebKit, como Chrome e Safari, esconde a barra de rolagem */
+
+
+/* ---- FORM ---- */
+/* Estilos para o formulário de adição de tarefas */
+
+/* Estilos para o formulário */
+#todo-form {
+  padding: 2rem; /* Adiciona preenchimento interno de 2rem (32px) ao formulário */
+  display: flex; /* Usa o modelo de layout flexível */
+  flex-wrap: wrap; /* Permite que os itens dentro do formulário quebrem para a próxima linha se necessário */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+}
+
+/* Estilos para o campo de entrada */
+    #todo-form input {
+        flex: 1; /* Faz com que o campo de entrada ocupe o máximo de espaço disponível */
+        padding: 1rem; /* Adiciona preenchimento interno de 1rem (16px) ao campo de entrada */
+        margin-right: 1rem; /* Define uma margem direita de 1rem (16px) para separar o campo de entrada do botão */
+        border-radius: 0.5rem; /* Adiciona uma borda arredondada de 0.5rem (8px) ao campo de entrada */
+        border: none; /* Remove a borda do campo de entrada */
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25); /* Adiciona uma sombra sutil ao campo de entrada */
+        background: white; /* Define o fundo do campo de entrada como branco */
+        font-size: 1rem; /* Define o tamanho da fonte como 1rem (16px) */
+        font-family: Sans-serif, Roboto, Open Sans; /* Define a fonte do campo de entrada */
+        outline: none; /* Remove o contorno ao focar no campo de entrada */
+    }
+
+/* Estilos para o botão */
+    #todo-form button {
+        padding: 1rem 2rem; /* Adiciona preenchimento interno de 1rem (16px) vertical e 2rem (32px) horizontal ao botão */
+        border-radius: 0.5rem; /* Adiciona uma borda arredondada de 0.5rem (8px) ao botão */
+        border: none; /* Remove a borda do botão */
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25); /* Adiciona uma sombra sutil ao botão */
+        background: #a5d6a7; /* Define o fundo do botão como uma cor verde claro */
+        color: black; /* Define a cor do texto como preto */
+        font-weight: bold; /* Define a espessura da fonte como negrito */
+        font-size: 1rem; /* Define o tamanho da fonte como 1rem (16px) */
+        font-family: Sans-serif, Roboto, Open Sans; /* Define a fonte do botão */
+        cursor: pointer; /* Altera o cursor para o formato de mão ao passar o mouse sobre o botão */
+    }
+
+/* ---- BOARD ---- */
+/* Estilos para o quadro do Kanban */
+
+/* Estilos para o quadro */
+.board {
+  width: 100%; /* Define a largura do quadro como 100% da largura do contêiner pai */
+  min-height: 100vh; /* Define a altura mínima do quadro como 100% da altura da janela de visualização */
+  padding: 2rem; /* Adiciona preenchimento interno de 2rem (32px) ao quadro */
+  display: flex; /* Usa o modelo de layout flexível */
+  flex-direction: column; /* Alinha os itens verticalmente em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Estilos para as colunas do Kanban */
+.lanes {
+  display: flex; /* Usa o modelo de layout flexível */
+  justify-content: space-around; /* Distribui uniformemente os itens horizontalmente */
+  gap: 2rem; /* Define um espaçamento de 2rem (32px) entre as colunas */
+  flex-wrap: wrap; /* Permite que as colunas quebrem para a próxima linha se necessário */
+}
+
+/* Estilos para o título das colunas do Kanban */
+.heading {
+  font-size: 1.5rem; /* Define o tamanho da fonte como 1.5rem (24px) */
+  font-weight: bold; /* Define a espessura da fonte como negrito */
+  margin-bottom: 0.5rem; /* Adiciona uma margem inferior de 0.5rem (8px) */
+  text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+/* Estilos para as colunas do Kanban */
+.swim-lane {
+    display: flex; /* Usa o modelo de layout flexível */
+    flex-direction: column; /* Alinha os itens verticalmente em coluna */
+    gap: 1rem; /* Define um espaçamento de 1rem (16px) entre os itens */
+    background: #a5d6a7; /* Define o fundo das colunas como uma cor verde claro */
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25); /* Adiciona uma sombra sutil às colunas */
+    padding: 1rem; /* Adiciona preenchimento interno de 1rem (16px) às colunas */
+    border-radius: 0.5rem; /* Adiciona uma borda arredondada de 0.5rem (8px) às colunas */
+    min-width: 225px; /* Define a largura mínima das colunas como 225px */
+}
+
+/* Estilos para as tarefas do Kanban */
+.task {
+    background: white; /* Define o fundo das tarefas como branco */
+    color: black; /* Define a cor do texto como preto */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); /* Adiciona uma sombra sutil às tarefas */
+    padding: 1rem; /* Adiciona preenchimento interno de 1rem (16px) às tarefas */
+    border-radius: 0.5rem; /* Adiciona uma borda arredondada de 0.5rem (8px) às tarefas */
+    font-size: 1rem; /* Define o tamanho da fonte como 1rem (16px) */
+    font-family: Sans-serif, Roboto, Open Sans; /* Define a fonte das tarefas */
+    cursor: move; /* Altera o cursor para o formato de mover ao passar o mouse sobre as tarefas */
+}
+
+/* Estilos para quando uma tarefa está sendo arrastada */
+.is-dragging {
+  transform: scale(1.05); /* Aumenta ligeiramente o tamanho da tarefa */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25); /* Adiciona uma sombra mais pronunciada à tarefa */
+  background: rgb(50, 50, 50); /* Define o fundo da tarefa como uma cor cinza mais escura */
+  color: white; /* Define a cor do texto como branco */
+}
+
+.row{
+  display: flex;
+  
+}
+
+nav {
+  background-color: #A5D6A7;
+}
+
